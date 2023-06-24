@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cydkrk4px8uho"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_gn4up"]
+[ext_resource type="PackedScene" uid="uid://25uvuvtbi8ol" path="res://player.tscn" id="2_4tqwd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhgcq"]
+size = Vector2(20, 77)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_gn4up")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-0.921432, -0.599998)
+scale = Vector2(0.991071, 0.991071)
+polygon = PackedVector2Array(0.929734, 0.605404, 32.209, 0.605404, 32.209, 127.741, 64, 128, 64, 152, 128.065, 119.668, 151.272, 119.668, 151.272, 180.209, 175.488, 180.209, 175.488, 129.759, 203.741, 129.759, 203.741, 160.029, 240, 160, 264, 128, 288, 128, 288, 160, 311.705, 160.029, 311.705, 0.605404, 342.984, 0.605404, 342.984, 210.479, 0.929734, 210.479)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_4tqwd")]
+position = Vector2(40, 64)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(255, 38.5)
+shape = SubResource("RectangleShape2D_hhgcq")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+offset_left = 245.0
+offset_right = 265.0
+offset_bottom = 77.0
