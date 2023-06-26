@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://25uvuvtbi8ol"]
+[gd_scene load_steps=15 format=3 uid="uid://25uvuvtbi8ol"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_y4ksq"]
 [ext_resource type="Texture2D" uid="uid://emmsxbhaxs5r" path="res://player.png" id="2_mbggp"]
@@ -81,7 +81,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5fpg"]
 size = Vector2(10, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjatm"]
+size = Vector2(6, 13)
+
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(1, 0)
+collision_layer = 2
 floor_stop_on_slope = false
 floor_constant_speed = true
 floor_max_angle = 0.523599
@@ -101,8 +106,21 @@ shape = SubResource("RectangleShape2D_n5fpg")
 debug_color = Color(0.898039, 0.180392, 0.643137, 0.419608)
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
-wait_time = 0.15
+wait_time = 0.1
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -32)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="HazerdDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazerdDetector"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_rjatm")
+debug_color = Color(0.584314, 0.0588235, 0.298039, 0.419608)
+
+[connection signal="area_entered" from="HazerdDetector" to="." method="_on_hazerd_detector_area_entered"]

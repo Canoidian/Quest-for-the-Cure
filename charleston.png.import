@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcy4jxtqj8djg"
-path="res://.godot/imported/player-isaac.png-9460004bfe641d3814e570a4d9bc49a5.ctex"
+uid="uid://ke07ynxegbr"
+path="res://.godot/imported/charleston.png-07b044281a71547c8507cc2e4d893860.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player-isaac.png"
-dest_files=["res://.godot/imported/player-isaac.png-9460004bfe641d3814e570a4d9bc49a5.ctex"]
+source_file="res://charleston.png"
+dest_files=["res://.godot/imported/charleston.png-07b044281a71547c8507cc2e4d893860.ctex"]
 
 [params]
 
