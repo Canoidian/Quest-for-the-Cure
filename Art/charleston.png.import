@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnggw2rtkggn1"
-path="res://.godot/imported/spikes.png-4a2427e7b6483a335646e762227cfd31.ctex"
+uid="uid://c4pdlv1aobh82"
+path="res://.godot/imported/charleston.png-6ae0a47295b5e6d9de259ee5fc6c73fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spikes.png"
-dest_files=["res://.godot/imported/spikes.png-4a2427e7b6483a335646e762227cfd31.ctex"]
+source_file="res://Art/charleston.png"
+dest_files=["res://.godot/imported/charleston.png-6ae0a47295b5e6d9de259ee5fc6c73fc.ctex"]
 
 [params]
 

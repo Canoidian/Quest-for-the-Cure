@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ke07ynxegbr"
-path="res://.godot/imported/charleston.png-07b044281a71547c8507cc2e4d893860.ctex"
+uid="uid://dmeg5s8ud47r7"
+path="res://.godot/imported/slopes.png-b710d7cb4bd3d90bbdfa0e75bcd39879.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://charleston.png"
-dest_files=["res://.godot/imported/charleston.png-07b044281a71547c8507cc2e4d893860.ctex"]
+source_file="res://Art/slopes.png"
+dest_files=["res://.godot/imported/slopes.png-b710d7cb4bd3d90bbdfa0e75bcd39879.ctex"]
 
 [params]
 

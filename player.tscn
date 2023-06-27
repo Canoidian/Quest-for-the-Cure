@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://25uvuvtbi8ol"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_y4ksq"]
-[ext_resource type="Texture2D" uid="uid://emmsxbhaxs5r" path="res://player.png" id="2_mbggp"]
+[ext_resource type="Texture2D" path="res://player.png" id="2_mbggp"]
 [ext_resource type="Resource" uid="uid://bewfg3ceyv2jk" path="res://DefualtMovementData.tres" id="2_u1wq2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhkdk"]
@@ -111,8 +111,9 @@ one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -32)
+process_callback = 0
 position_smoothing_enabled = true
-position_smoothing_speed = 7.0
+position_smoothing_speed = 10.0
 
 [node name="HazerdDetector" type="Area2D" parent="."]
 collision_layer = 0

@@ -1,65 +1,50 @@
-[gd_scene load_steps=6 format=3 uid="uid://cydkrk4px8uho"]
+[gd_scene load_steps=7 format=3 uid="uid://cydkrk4px8uho"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_gn4up"]
 [ext_resource type="PackedScene" uid="uid://25uvuvtbi8ol" path="res://player.tscn" id="2_4tqwd"]
 [ext_resource type="PackedScene" uid="uid://c181sb0fb1hx4" path="res://spikes.tscn" id="3_hdlkl"]
 [ext_resource type="PackedScene" uid="uid://bcng63s1pq37" path="res://heart.tscn" id="4_pjg8s"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhgcq"]
-size = Vector2(20, 77)
+[ext_resource type="PackedScene" uid="uid://28b55qaxjipq" path="res://level_completed.tscn" id="5_mpq3o"]
+[ext_resource type="PackedScene" uid="uid://c2pko3ntluvqw" path="res://level_tile_map.tscn" id="6_2picg"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_gn4up")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-0.921432, -0.599998)
-scale = Vector2(0.991071, 0.991071)
-polygon = PackedVector2Array(0.929734, 0.605404, 32.209, 0.605404, 32.209, 127.741, 64.4973, 127.741, 64, 152, 128.065, 119.668, 151.272, 119.668, 151.272, 180.209, 175.488, 180.209, 175.488, 129.759, 203.741, 129.759, 203.741, 160.029, 240, 160, 259.236, 129.759, 279.416, 129.759, 279.416, 160.029, 311.705, 160.029, 311.705, 0.605404, 342.984, 0.605404, 342.984, 210.479, 0.929734, 210.479)
-
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_4tqwd")]
 position = Vector2(40, 126)
 collision_layer = 1
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(255, 38.5)
-shape = SubResource("RectangleShape2D_hhgcq")
-
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
-offset_left = 245.0
-offset_right = 265.0
-offset_bottom = 77.0
-
 [node name="Spikes" parent="." instance=ExtResource("3_hdlkl")]
-position = Vector2(149, 178)
+position = Vector2(144, 176)
 
 [node name="Spikes2" parent="." instance=ExtResource("3_hdlkl")]
-position = Vector2(157, 178)
+position = Vector2(160, 176)
 
 [node name="Spikes3" parent="." instance=ExtResource("3_hdlkl")]
-position = Vector2(276, 158)
+position = Vector2(272, 160)
 
 [node name="Spikes4" parent="." instance=ExtResource("3_hdlkl")]
-position = Vector2(292, 158)
+position = Vector2(288, 160)
 
 [node name="Heart" parent="." instance=ExtResource("4_pjg8s")]
 position = Vector2(138, 110)
 
 [node name="Heart2" parent="." instance=ExtResource("4_pjg8s")]
-position = Vector2(239, 38)
+position = Vector2(281, 43)
 
 [node name="Heart3" parent="." instance=ExtResource("4_pjg8s")]
-position = Vector2(323, -7)
+position = Vector2(322.995, -6.2595)
 
 [node name="Heart4" parent="." instance=ExtResource("4_pjg8s")]
 position = Vector2(291, 110)
 
 [node name="Heart5" parent="." instance=ExtResource("4_pjg8s")]
-position = Vector2(15, -7)
+position = Vector2(217, 149)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("5_mpq3o")]
+visible = false
+
+[node name="LevelTileMap" parent="." instance=ExtResource("6_2picg")]
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 131072, 0, 65537, 131072, 1, 131073, 131072, 1, 196609, 131072, 1, 196608, 0, 1, 262144, 0, 1, 327680, 0, 1, 327681, 131072, 1, 262145, 131072, 1, 131072, 0, 1, 65536, 0, 1, 393216, 0, 1, 458752, 0, 1, 524288, 0, 1, 524289, 327680, 2, 458753, 131072, 1, 393217, 131072, 1, 524290, 65536, 0, 524291, 131072, 0, 16, 131072, 0, 65552, 131072, 1, 131088, 131072, 1, 196624, 131072, 1, 262160, 131072, 2, 589824, 0, 1, 589825, 65536, 1, 589826, 65536, 1, 655360, 0, 1, 655361, 65536, 1, 655362, 65536, 1, 655363, 327680, 2, 720896, 0, 1, 786432, 0, 2, 786433, 65536, 2, 720897, 65536, 1, 720898, 65536, 1, 720899, 65536, 1, 720900, 65536, 1, 720901, 65536, 1, 720902, 65536, 1, 720903, 65536, 1, 655368, 131072, 1, 655367, 65536, 1, 655366, 65536, 1, 655365, 393216, 2, 655364, 65536, 0, 589831, 393216, 2, 524296, 131072, 0, 589832, 131072, 1, 786434, 65536, 2, 786435, 65536, 2, 786436, 65536, 2, 786438, 65536, 2, 786437, 65536, 2, 786439, 65536, 2, 786440, 65536, 2, 786441, 65536, 2, 786442, 65536, 2, 786443, 65536, 2, 786444, 65536, 2, 786445, 65536, 2, 786446, 65536, 2, 524299, 0, 0, 589835, 0, 1, 655371, 0, 1, 720907, 393216, 2, 720908, 65536, 1, 655372, 327680, 2, 655373, 65536, 0, 720909, 65536, 1, 589840, 196608, 1, 524304, 196608, 0, 655374, 65536, 0, 655375, 65536, 0, 655376, 524288, 2, 655377, 65536, 0, 655378, 65536, 0, 655379, 393216, 2, 655380, 131072, 1, 720916, 131072, 1, 786452, 131072, 2, 786451, 65536, 2, 786450, 65536, 2, 786449, 65536, 2, 786448, 65536, 2, 786447, 65536, 2, 720910, 65536, 1, 720911, 65536, 1, 720912, 65536, 1, 720913, 65536, 1, 720914, 65536, 1, 720915, 65536, 1, 20, 131072, 0, 65556, 131072, 1, 131092, 131072, 1, 196628, 131072, 1, 262164, 131072, 1, 327700, 131072, 1, 393236, 131072, 1, 458772, 131072, 1, 524308, 131072, 1, 589844, 131072, 1, 589827, 131072, 1, 720906, 65536, 0, 720905, 65536, 0, 720904, 327680, 2, 524300, 131072, 0, 589836, 131072, 1, 262159, 0, 2, 196623, 0, 1, 131087, 0, 1, 65551, 0, 1, 15, 0, 0, 19, 0, 0, 65555, 0, 1, 131091, 0, 1, 196627, 0, 1, 262163, 0, 1, 327699, 0, 1, 393235, 0, 1, 458771, 0, 1, 524307, 0, 1, 589843, 0, 1, 524295, 0, 0, 589830, 65536, 0, 589829, 0, 0)
