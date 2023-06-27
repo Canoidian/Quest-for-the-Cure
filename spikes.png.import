@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqw5gi012g8uh"
-path="res://.godot/imported/slopes_flipped.png-b59328d243b8448882260c119a98957f.ctex"
+uid="uid://r4j8kxs26vu1"
+path="res://.godot/imported/spikes.png-4a2427e7b6483a335646e762227cfd31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/slopes_flipped.png"
-dest_files=["res://.godot/imported/slopes_flipped.png-b59328d243b8448882260c119a98957f.ctex"]
+source_file="res://spikes.png"
+dest_files=["res://.godot/imported/spikes.png-4a2427e7b6483a335646e762227cfd31.ctex"]
 
 [params]
 

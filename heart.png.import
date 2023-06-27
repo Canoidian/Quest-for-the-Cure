@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beppsd272iujs"
-path="res://.godot/imported/tiles-isaac.jpeg-3f17e137f16a36b5d1037116dc248eae.ctex"
+uid="uid://cgjrndrx2dm5q"
+path="res://.godot/imported/heart.png-46ac0108226a8969f121b451c7b38c9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/tiles-isaac.jpeg"
-dest_files=["res://.godot/imported/tiles-isaac.jpeg-3f17e137f16a36b5d1037116dc248eae.ctex"]
+source_file="res://heart.png"
+dest_files=["res://.godot/imported/heart.png-46ac0108226a8969f121b451c7b38c9b.ctex"]
 
 [params]
 

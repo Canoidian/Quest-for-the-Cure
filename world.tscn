@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cydkrk4px8uho"]
+[gd_scene load_steps=6 format=3 uid="uid://cydkrk4px8uho"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_gn4up"]
-[ext_resource type="PackedScene" uid="uid://25uvuvtbi8ol" path="res://player.tscn" id="2_4tqwd"]
 [ext_resource type="PackedScene" uid="uid://c181sb0fb1hx4" path="res://spikes.tscn" id="3_hdlkl"]
 [ext_resource type="PackedScene" uid="uid://bcng63s1pq37" path="res://heart.tscn" id="4_pjg8s"]
 [ext_resource type="PackedScene" uid="uid://28b55qaxjipq" path="res://level_completed.tscn" id="5_mpq3o"]
@@ -9,10 +8,6 @@
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_gn4up")
-
-[node name="Player" parent="." instance=ExtResource("2_4tqwd")]
-position = Vector2(40, 126)
-collision_layer = 1
 
 [node name="Spikes" parent="." instance=ExtResource("3_hdlkl")]
 position = Vector2(144, 176)
