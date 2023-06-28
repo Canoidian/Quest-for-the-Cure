@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcng63s1pq37"]
 
 [ext_resource type="Script" path="res://heart.gd" id="1_4vouc"]
-[ext_resource type="Texture2D" path="res://heart.png" id="1_ywb6h"]
+[ext_resource type="Texture2D" uid="uid://cgjrndrx2dm5q" path="res://heart.png" id="1_ywb6h"]
 
 [node name="Heart" type="Area2D" groups=["Hearts"]]
 collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_4vouc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
