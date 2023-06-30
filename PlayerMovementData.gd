@@ -8,3 +8,4 @@ extends Resource
 @export var gravity_scale = 0.8
 @export var air_resistance = 200.0
 @export var air_acceleration = 400.0
+

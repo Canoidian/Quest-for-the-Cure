@@ -1,0 +1,150 @@
+[gd_scene load_steps=17 format=3 uid="uid://dlspafdn8e5w3"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_84aqu"]
+[ext_resource type="Resource" uid="uid://bewfg3ceyv2jk" path="res://DefualtMovementData.tres" id="2_olgxe"]
+[ext_resource type="Texture2D" uid="uid://hk8ouexvxctb" path="res://josep.png" id="3_rlajl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h6r6"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(3, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12a7x"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(16, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5wyx"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(3, 48, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fmqk"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(16, 48, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp2rx"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(29, 48, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5gpu"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(42, 48, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cancc"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(3, 16, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j784t"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(16, 16, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awnv8"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(29, 16, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nft4p"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(42, 16, 13, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owrcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h6r6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12a7x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5wyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fmqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp2rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5gpu")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cancc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j784t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awnv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nft4p")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5fpg"]
+size = Vector2(10.625, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjatm"]
+size = Vector2(6.5, 7.8125)
+
+[node name="Josep" type="CharacterBody2D"]
+position = Vector2(1, 0)
+collision_layer = 2
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_max_angle = 0.523599
+floor_snap_length = 3.0
+safe_margin = 0.1
+script = ExtResource("1_84aqu")
+movement_data = ExtResource("2_olgxe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.999998, -8)
+scale = Vector2(0.905722, 0.905722)
+sprite_frames = SubResource("SpriteFrames_owrcc")
+animation = &"run"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.480004
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -6)
+shape = SubResource("RectangleShape2D_n5fpg")
+debug_color = Color(0.898039, 0.180392, 0.643137, 0.419608)
+
+[node name="CoyoteJumpTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, -10)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
+
+[node name="WallJumpTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="HazerdDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazerdDetector"]
+position = Vector2(-1, -6)
+shape = SubResource("RectangleShape2D_rjatm")
+one_way_collision_margin = 1.2
+debug_color = Color(0.278431, 0.317647, 0.847059, 0.419608)
+
+[connection signal="area_entered" from="HazerdDetector" to="." method="_on_hazerd_detector_area_entered"]

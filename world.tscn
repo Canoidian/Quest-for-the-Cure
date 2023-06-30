@@ -1,19 +1,121 @@
-[gd_scene load_steps=5 format=3 uid="uid://cydkrk4px8uho"]
+[gd_scene load_steps=11 format=3 uid="uid://cydkrk4px8uho"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_gn4up"]
-[ext_resource type="PackedScene" uid="uid://28b55qaxjipq" path="res://level_completed.tscn" id="5_mpq3o"]
+[ext_resource type="PackedScene" uid="uid://dlspafdn8e5w3" path="res://josep.tscn" id="2_86uaw"]
+[ext_resource type="Texture2D" uid="uid://db3lc2asob106" path="res://Isaac-Background.png" id="3_uhsnl"]
+[ext_resource type="PackedScene" uid="uid://bsdm44vflvfr0" path="res://level_completed.tscn" id="5_mpq3o"]
 [ext_resource type="PackedScene" uid="uid://c2pko3ntluvqw" path="res://level_tile_map.tscn" id="6_2picg"]
-[ext_resource type="PackedScene" uid="uid://25uvuvtbi8ol" path="res://player.tscn" id="6_xdutu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ocea8"]
+font_size = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_ef8r2"]
+font_size = 8
+
+[sub_resource type="Animation" id="Animation_owvmy"]
+resource_name = "Countdown"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/StartIn/CenterContainer/StartInLable:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Start in: 3", "Start in: 2", "Start in: 1
+"]
+}
+
+[sub_resource type="Animation" id="Animation_d5ayn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/StartIn/CenterContainer/StartInLable:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Start in: 3"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vyoko"]
+_data = {
+"Countdown": SubResource("Animation_owvmy"),
+"RESET": SubResource("Animation_d5ayn")
+}
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_gn4up")
 
-[node name="Player" parent="." instance=ExtResource("6_xdutu")]
-position = Vector2(0, 0)
+[node name="Josep" parent="." instance=ExtResource("2_86uaw")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("5_mpq3o")]
 visible = false
 
+[node name="StartIn" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.243137)
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/StartIn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartInLable" type="Label" parent="CanvasLayer/StartIn/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start in: 3"
+label_settings = SubResource("LabelSettings_ocea8")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+
+[node name="LevelTimeLablel" type="Label" parent="CanvasLayer/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ef8r2")
+vertical_alignment = 1
+
 [node name="LevelTileMap" parent="." instance=ExtResource("6_2picg")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_vyoko")
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-35.4703, 25.5)
+scale = Vector2(1.52039, 1.52039)
+texture = ExtResource("3_uhsnl")
+
+[connection signal="next_level" from="CanvasLayer/LevelCompleted" to="." method="_on_level_completed_next_level"]
+[connection signal="retry" from="CanvasLayer/LevelCompleted" to="." method="_on_level_completed_retry"]
