@@ -111,10 +111,10 @@ libraries = {
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-35.4703, 25.5)
-scale = Vector2(1.52039, 1.52039)
+scale = Vector2(0.881177, 0.881176)
 texture = ExtResource("3_uhsnl")
 
 [connection signal="next_level" from="CanvasLayer/LevelCompleted" to="." method="_on_level_completed_next_level"]
