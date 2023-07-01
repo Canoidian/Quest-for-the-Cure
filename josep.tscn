@@ -1,8 +1,24 @@
-[gd_scene load_steps=17 format=3 uid="uid://dlspafdn8e5w3"]
+[gd_scene load_steps=21 format=3 uid="uid://dlspafdn8e5w3"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_84aqu"]
 [ext_resource type="Resource" uid="uid://bewfg3ceyv2jk" path="res://DefualtMovementData.tres" id="2_olgxe"]
 [ext_resource type="Texture2D" uid="uid://hk8ouexvxctb" path="res://josep.png" id="3_rlajl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtu7r"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(3, 32, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ghxo"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(16, 32, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4fjo"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(29, 32, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqlu4"]
+atlas = ExtResource("3_rlajl")
+region = Rect2(42, 32, 13, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4h6r6"]
 atlas = ExtResource("3_rlajl")
@@ -46,6 +62,23 @@ region = Rect2(42, 16, 13, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_owrcc"]
 animations = [{
+"frames": [{
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_rtu7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ghxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4fjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqlu4")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 2.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4h6r6")
@@ -113,10 +146,9 @@ movement_data = ExtResource("2_olgxe")
 position = Vector2(-0.999998, -8)
 scale = Vector2(0.905722, 0.905722)
 sprite_frames = SubResource("SpriteFrames_owrcc")
-animation = &"run"
+animation = &"damage"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.480004
+frame_progress = 0.657516
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -6)

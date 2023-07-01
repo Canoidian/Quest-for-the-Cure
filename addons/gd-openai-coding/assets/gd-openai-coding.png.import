@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dex7mhbodvc4g"
-path="res://.godot/imported/Background_2.png-858237375ff7bbe1176734a0896483c9.ctex"
+uid="uid://dm0w21ubhumt5"
+path="res://.godot/imported/gd-openai-coding.png-7b20c5b49298ab24a9a924a0618602cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background_2.png"
-dest_files=["res://.godot/imported/Background_2.png-858237375ff7bbe1176734a0896483c9.ctex"]
+source_file="res://addons/gd-openai-coding/assets/gd-openai-coding.png"
+dest_files=["res://.godot/imported/gd-openai-coding.png-7b20c5b49298ab24a9a924a0618602cc.ctex"]
 
 [params]
 

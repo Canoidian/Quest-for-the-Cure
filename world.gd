@@ -31,7 +31,6 @@ func _process(_delta):
 	level_time = Time.get_ticks_msec() - start_level_msec
 	level_time_lablel.text = str(level_time / 1000.0)
 
-	
 func retry():
 	await LevelTransition.fade_to_black()
 	get_tree().paused = false

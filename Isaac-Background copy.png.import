@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db3lc2asob106"
-path="res://.godot/imported/Isaac-Background.png-58c1e14333412036fceb7efd40a5f0a0.ctex"
+uid="uid://bqf5qjgvq3vv0"
+path="res://.godot/imported/Isaac-Background copy.png-949f2bd15740d7d0b4dc5cac1846747e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Isaac-Background.png"
-dest_files=["res://.godot/imported/Isaac-Background.png-58c1e14333412036fceb7efd40a5f0a0.ctex"]
+source_file="res://Isaac-Background copy.png"
+dest_files=["res://.godot/imported/Isaac-Background copy.png-949f2bd15740d7d0b4dc5cac1846747e.ctex"]
 
 [params]
 

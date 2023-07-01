@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://world.gd" id="1_gn4up"]
 [ext_resource type="PackedScene" uid="uid://dlspafdn8e5w3" path="res://josep.tscn" id="2_86uaw"]
-[ext_resource type="Texture2D" uid="uid://db3lc2asob106" path="res://Isaac-Background.png" id="3_uhsnl"]
 [ext_resource type="PackedScene" uid="uid://bsdm44vflvfr0" path="res://level_completed.tscn" id="5_mpq3o"]
+[ext_resource type="Texture2D" uid="uid://bqf5qjgvq3vv0" path="res://Isaac-Background copy.png" id="5_tpxmr"]
 [ext_resource type="PackedScene" uid="uid://c2pko3ntluvqw" path="res://level_tile_map.tscn" id="6_2picg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ocea8"]
@@ -111,11 +111,11 @@ libraries = {
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2(0.881177, 0.881176)
-texture = ExtResource("3_uhsnl")
+position = Vector2(1979.11, 1040)
+scale = Vector2(1.85567, 1.85567)
+texture = ExtResource("5_tpxmr")
 
 [connection signal="next_level" from="CanvasLayer/LevelCompleted" to="." method="_on_level_completed_next_level"]
 [connection signal="retry" from="CanvasLayer/LevelCompleted" to="." method="_on_level_completed_retry"]

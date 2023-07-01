@@ -5,7 +5,6 @@ var just_wall_jumped = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var was_wall_normal = Vector2.ZERO #
 
-
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var starting_pos = global_position
