@@ -112,3 +112,6 @@ position = Vector2(352, -48)
 
 [node name="Spikes26" parent="." index="36" instance=ExtResource("3_va1ft")]
 position = Vector2(368, -48)
+
+[node name="Sprite2D" parent="ParallaxBackground/ParallaxLayer" index="0"]
+position = Vector2(1980, 1060)

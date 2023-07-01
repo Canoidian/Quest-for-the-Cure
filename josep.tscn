@@ -126,13 +126,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5fpg"]
-size = Vector2(10.625, 11)
+size = Vector2(9, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjatm"]
 size = Vector2(6.5, 7.8125)
 
 [node name="Josep" type="CharacterBody2D"]
-position = Vector2(1, 0)
+position = Vector2(1, 1)
 collision_layer = 2
 floor_stop_on_slope = false
 floor_constant_speed = true
@@ -146,12 +146,12 @@ movement_data = ExtResource("2_olgxe")
 position = Vector2(-0.999998, -8)
 scale = Vector2(0.905722, 0.905722)
 sprite_frames = SubResource("SpriteFrames_owrcc")
-animation = &"damage"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.657516
+frame_progress = 0.375921
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -6)
+position = Vector2(-1.5, -6.25)
 shape = SubResource("RectangleShape2D_n5fpg")
 debug_color = Color(0.898039, 0.180392, 0.643137, 0.419608)
 
