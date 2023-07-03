@@ -179,4 +179,9 @@ shape = SubResource("RectangleShape2D_rjatm")
 one_way_collision_margin = 1.2
 debug_color = Color(0.278431, 0.317647, 0.847059, 0.419608)
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="area_entered" from="HazerdDetector" to="." method="_on_hazerd_detector_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

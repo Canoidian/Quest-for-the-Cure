@@ -5,6 +5,8 @@ var just_wall_jumped = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var was_wall_normal = Vector2.ZERO #
 
+var speed = 100
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var starting_pos = global_position
@@ -33,6 +35,10 @@ func _physics_process(delta):
 	var just_left_wall = was_on_wall and not is_on_wall() #
 	if just_left_wall: #
 		wall_jump_timer.start() #
+		
+	if Input.is_action_pressed("dash"):
+		dash()
+	
 	update_animations(input_axis)
 	
 func apply_gravity(delta):
@@ -84,6 +90,10 @@ func apply_air_resistance(input_axis, delta):
 	if input_axis == 0 and not is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, movement_data.air_resistance * delta)
 
+func dash():
+	speed = speed * 3
+	$Timer.start()
+
 func update_animations(input_axis):
 	if input_axis != 0:
 		animated_sprite_2d.flip_h = (input_axis < 0)
@@ -96,3 +106,7 @@ func update_animations(input_axis):
 
 func _on_hazerd_detector_area_entered(_area):
 	global_position = starting_pos
+
+
+func _on_timer_timeout():
+	speed = 100
